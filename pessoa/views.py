@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from .models import Pessoa
 from .forms import PessoaForm
 
@@ -8,6 +8,11 @@ class ListaPessoaView(ListView):
     queryset = Pessoa.objects.all().order_by('nome_completo')
   
 class PessoaCreateView(CreateView):
+    model = Pessoa
+    form_class = PessoaForm
+    success_url = '/pessoas/'
+
+class PessoaUpdateView(UpdateView):
     model = Pessoa
     form_class = PessoaForm
     success_url = '/pessoas/'
