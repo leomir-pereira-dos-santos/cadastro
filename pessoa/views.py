@@ -1,3 +1,4 @@
+from django.http import HttpResponse, Http404
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Pessoa
@@ -28,3 +29,10 @@ class PessoaUpdateView(UpdateView):
 class PessoaDeleteView(DeleteView):
     model = Pessoa
     success_url = '/pessoas/'
+
+def contatos(request, pk):
+    try:
+        contatos = Contato.objects.get(pessoa=pk)
+    except Contato.DoesNotExist:
+        raise Http404
+    return render(request, 'contato/contato_list.html', {'contatos': contatos})
