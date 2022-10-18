@@ -31,8 +31,5 @@ class PessoaDeleteView(DeleteView):
     success_url = '/pessoas/'
 
 def contatos(request, pk):
-    try:
-        contatos = Contato.objects.get(pessoa=pk)
-    except Contato.DoesNotExist:
-        raise Http404
+    contatos = Contato.objects.filter(pessoa=pk)
     return render(request, 'contato/contato_list.html', {'contatos': contatos})

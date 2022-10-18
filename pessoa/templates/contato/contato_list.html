@@ -9,28 +9,21 @@
     <thead>
         <tr>
             <th>Nome</th>
-            <th>Data de nascimento</th>
-            <th>Ativa</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
             <th>Açoes</th>
         </tr>
     </thead>
     <tbody>
-       {% for pessoa in object_list %}
+       {% for contato in contatos %}
        <tr>
-          <td>{{ pessoa.nome_completo }}</td>
-          <td>{{ pessoa.data_nascimento|date:"d/m/Y" }}</td>
+          <td>{{ pessoa.nome }}</td>
+          <td>{{ pessoa.email }}</td>
+          <td>{{ pessoa.telefone}}
+          </td>
           <td>
-            {% if pessoa.ativa %}
-            Sim
-            {% else %}
-            Não
-            {% endif %}
             </td>
-            <td>
-                <a href="{% url 'pessoa.editar' pessoa.pk %}">Editar</a>
-                <a href="{% url 'pessoa.remover' pessoa.pk %}">Remover</a>
-            </td>
-        </tr>
+      </tr>
         {% endfor %}
     </tbody>
 </table>
