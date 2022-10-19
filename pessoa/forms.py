@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import fields
-from .models import Pessoa
+from .models import Pessoa, Contato
 
 class PessoaForm(forms.ModelForm):
     data_nascimento = forms.DateField(
@@ -11,3 +11,6 @@ class PessoaForm(forms.ModelForm):
     class Meta:
         model = Pessoa
         fields = ['nome_completo', 'data_nascimento', 'ativa']
+
+
+    
