@@ -7,5 +7,5 @@ urlpatterns = [
     path('editar/<int:pk>', PessoaUpdateView.as_view(), name='pessoa.editar'),
     path('remover/<int:pk>', PessoaDeleteView.as_view(), name='pessoa.remover'),
     path('contatos/<int:pk>', views.contatos, name='pessoa.contatos'),
-
+    
 ]

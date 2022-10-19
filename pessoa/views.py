@@ -1,7 +1,7 @@
 from django.http import HttpResponse, Http404
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from .models import Pessoa
+from .models import Pessoa, Contato
 from .forms import PessoaForm
 
 class ListaPessoaView(ListView):

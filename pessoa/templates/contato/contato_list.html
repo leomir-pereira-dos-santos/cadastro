@@ -4,7 +4,6 @@
     <input type="text" name="nome" placeholder="Buscar por nome"/>
     <input type="submit" value="Buscar"/>
 </form>
-<a href="{% url 'contato.novo' pk_pessoa %}">Novo</a>
 <table>
     <thead>
         <tr>
@@ -19,8 +18,7 @@
        <tr>
           <td>{{ contato.nome }}</td>
           <td>{{ contato.email }}</td>
-          <td>{{ contato.telefone}}
-          <td>
+          <td>{{ contato.telefone}}</td>
           <td>
             <a href="{% url 'contato.editar' pk_pessoa contato.pk %}">Editar</a>
             <a href="{% url 'contato.remover' pk_pessoa contato.pk %}">Remover</a>
