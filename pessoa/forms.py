@@ -13,4 +13,7 @@ class PessoaForm(forms.ModelForm):
         fields = ['nome_completo', 'data_nascimento', 'ativa']
 
 
-    
+class ContatoForm(forms.ModelForm):
+    class Meta:
+        model = Contato
+        fields = ['nome', 'email', 'telefone']
