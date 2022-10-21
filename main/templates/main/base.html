@@ -7,11 +7,7 @@
     <title>cadastro de pessoas</title>
 </head>
 <body>
-    {% if user.is_authenticated %}
-    <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'pessoa.index' %}">Pessoas</a></li>
-    {% endif %}
+    {% include 'main/menu.html' %}
     </ul>
     {% block content %}
     {% endblock content %}
