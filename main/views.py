@@ -3,7 +3,6 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
 from django.contrib.auth import login
-
 from main.forms import NovoUsuarioForm
 
 
